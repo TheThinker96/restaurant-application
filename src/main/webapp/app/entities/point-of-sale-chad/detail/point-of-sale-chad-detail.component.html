@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="pointOfSale">
+      <h2 data-cy="pointOfSaleDetailsHeading">
+        <span jhiTranslate="restaurantApplicationApp.pointOfSale.detail.title">Point Of Sale</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pointOfSale.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.pointOfSale.name">Name</span></dt>
+        <dd>
+          <span>{{ pointOfSale.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.pointOfSale.responsable">Responsable</span></dt>
+        <dd>
+          <span>{{ pointOfSale.responsable }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.pointOfSale.adresse">Adresse</span></dt>
+        <dd>
+          <span>{{ pointOfSale.adresse }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.pointOfSale.entreprise">Entreprise</span></dt>
+        <dd>
+          <div *ngIf="pointOfSale.entreprise">
+            <a [routerLink]="['/entreprise-chad', pointOfSale.entreprise.id, 'view']">{{ pointOfSale.entreprise.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/point-of-sale-chad', pointOfSale.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

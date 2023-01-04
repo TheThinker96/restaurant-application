@@ -1,0 +1,73 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220552",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "user_account",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "Sexe",
+      "fieldValues": "Masculin,Feminin"
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "Role",
+      "fieldValues": "CASHIER,RESPONSABLE_POINT,ADMIN,SUPER_ADMIN"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "8"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserAccount",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "venteProduit",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "venteProduit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "credit",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "credit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "entreprise",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "entreprise",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "pointOfSale",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "pointOfSale",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

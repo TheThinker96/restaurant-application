@@ -1,0 +1,9 @@
+export enum Role {
+  CASHIER = 'CASHIER',
+
+  RESPONSABLE_POINT = 'RESPONSABLE_POINT',
+
+  ADMIN = 'ADMIN',
+
+  SUPER_ADMIN = 'SUPER_ADMIN',
+}

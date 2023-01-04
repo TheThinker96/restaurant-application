@@ -1,0 +1,28 @@
+{
+  "restaurantApplicationApp": {
+    "stockProduit": {
+      "home": {
+        "title": "Stock Produits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Stock Produit",
+        "createOrEditLabel": "Criar ou editar Stock Produit",
+        "notFound": "Nenhum Stock Produits encontrado"
+      },
+      "created": "Um novo Stock Produit foi criado com o identificador {{ param }}",
+      "updated": "Stock Produit com identificador {{ param }} foi actualizado",
+      "deleted": "Stock Produit com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Stock Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Produit"
+      },
+      "id": "ID",
+      "name": "Name",
+      "quantite": "Quantite",
+      "dateExpiration": "Date Expiration",
+      "venteProduit": "Vente Produit",
+      "produit": "Produit"
+    }
+  }
+}

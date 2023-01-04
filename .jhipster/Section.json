@@ -1,0 +1,42 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220550",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "section",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "SectionStatut",
+      "fieldValues": "ACTIVE,INNACTIVE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Section",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "section",
+      "relationshipName": "produit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "entreprise",
+      "otherEntityRelationshipName": "section",
+      "relationshipName": "entreprise",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

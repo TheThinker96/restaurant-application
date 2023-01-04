@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="stockProduit">
+      <h2 data-cy="stockProduitDetailsHeading">
+        <span jhiTranslate="restaurantApplicationApp.stockProduit.detail.title">Stock Produit</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ stockProduit.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.stockProduit.name">Name</span></dt>
+        <dd>
+          <span>{{ stockProduit.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.stockProduit.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ stockProduit.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.stockProduit.dateExpiration">Date Expiration</span></dt>
+        <dd>
+          <span>{{ stockProduit.dateExpiration | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.stockProduit.produit">Produit</span></dt>
+        <dd>
+          <div *ngIf="stockProduit.produit">
+            <a [routerLink]="['/produit-chad', stockProduit.produit.id, 'view']">{{ stockProduit.produit.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/stock-produit-chad', stockProduit.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

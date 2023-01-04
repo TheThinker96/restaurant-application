@@ -48,6 +48,26 @@ public class CacheConfiguration {
             createCache(cm, com.chad.restaurant.domain.User.class.getName());
             createCache(cm, com.chad.restaurant.domain.Authority.class.getName());
             createCache(cm, com.chad.restaurant.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.chad.restaurant.domain.Entreprise.class.getName());
+            createCache(cm, com.chad.restaurant.domain.Entreprise.class.getName() + ".pointOfSales");
+            createCache(cm, com.chad.restaurant.domain.Entreprise.class.getName() + ".sections");
+            createCache(cm, com.chad.restaurant.domain.Entreprise.class.getName() + ".produits");
+            createCache(cm, com.chad.restaurant.domain.Entreprise.class.getName() + ".userAccounts");
+            createCache(cm, com.chad.restaurant.domain.PointOfSale.class.getName());
+            createCache(cm, com.chad.restaurant.domain.PointOfSale.class.getName() + ".userAccounts");
+            createCache(cm, com.chad.restaurant.domain.Section.class.getName());
+            createCache(cm, com.chad.restaurant.domain.Section.class.getName() + ".produits");
+            createCache(cm, com.chad.restaurant.domain.Produit.class.getName());
+            createCache(cm, com.chad.restaurant.domain.Produit.class.getName() + ".stockProduits");
+            createCache(cm, com.chad.restaurant.domain.Produit.class.getName() + ".venteProduits");
+            createCache(cm, com.chad.restaurant.domain.UserAccount.class.getName());
+            createCache(cm, com.chad.restaurant.domain.UserAccount.class.getName() + ".venteProduits");
+            createCache(cm, com.chad.restaurant.domain.UserAccount.class.getName() + ".credits");
+            createCache(cm, com.chad.restaurant.domain.StockProduit.class.getName());
+            createCache(cm, com.chad.restaurant.domain.StockProduit.class.getName() + ".venteProduits");
+            createCache(cm, com.chad.restaurant.domain.VenteProduit.class.getName());
+            createCache(cm, com.chad.restaurant.domain.Client.class.getName());
+            createCache(cm, com.chad.restaurant.domain.Credit.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

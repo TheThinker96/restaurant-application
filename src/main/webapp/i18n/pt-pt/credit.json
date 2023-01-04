@@ -1,0 +1,27 @@
+{
+  "restaurantApplicationApp": {
+    "credit": {
+      "home": {
+        "title": "Credits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Credit",
+        "createOrEditLabel": "Criar ou editar Credit",
+        "notFound": "Nenhum Credits encontrado"
+      },
+      "created": "Um novo Credit foi criado com o identificador {{ param }}",
+      "updated": "Credit com identificador {{ param }} foi actualizado",
+      "deleted": "Credit com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Credit {{ id }}?"
+      },
+      "detail": {
+        "title": "Credit"
+      },
+      "id": "ID",
+      "solde": "Solde",
+      "type": "Type",
+      "statut": "Statut",
+      "userAccount": "User Account"
+    }
+  }
+}

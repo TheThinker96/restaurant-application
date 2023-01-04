@@ -1,0 +1,55 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220554",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "vente_produit",
+  "fields": [
+    {
+      "fieldName": "quantite",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prix",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateVente",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "VenteStatut",
+      "fieldValues": "ACTIVE,CLOSED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VenteProduit",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "venteProduit",
+      "relationshipName": "produit",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "stockProduit",
+      "otherEntityRelationshipName": "venteProduit",
+      "relationshipName": "stockProduit",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "venteProduit",
+      "relationshipName": "userAccount",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

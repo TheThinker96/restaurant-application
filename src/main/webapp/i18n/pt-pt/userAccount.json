@@ -1,0 +1,32 @@
+{
+  "restaurantApplicationApp": {
+    "userAccount": {
+      "home": {
+        "title": "User Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) User Account",
+        "createOrEditLabel": "Criar ou editar User Account",
+        "notFound": "Nenhum User Accounts encontrado"
+      },
+      "created": "Um novo User Account foi criado com o identificador {{ param }}",
+      "updated": "User Account com identificador {{ param }} foi actualizado",
+      "deleted": "User Account com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) User Account {{ id }}?"
+      },
+      "detail": {
+        "title": "User Account"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "sexe": "Sexe",
+      "role": "Role",
+      "telephone": "Telephone",
+      "venteProduit": "Vente Produit",
+      "credit": "Credit",
+      "entreprise": "Entreprise",
+      "pointOfSale": "Point Of Sale"
+    }
+  }
+}

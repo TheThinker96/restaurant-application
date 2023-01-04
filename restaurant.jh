@@ -1,0 +1,180 @@
+// entity
+entity Entreprise {
+	name String minlength(4) maxlength(60) required
+    responsable String minlength(4) maxlength(60) required
+    adresse String minlength(4) maxlength(120)
+    telephones String minlength(4) maxlength(60) required
+    statut EntrepriseStatut
+}
+
+entity PointOfSale {
+	name String minlength(4) maxlength(60) required
+    responsable String minlength(4) maxlength(60) required
+    adresse String minlength(4) maxlength(60) required 
+    
+}
+
+entity Section{
+	name String minlength(4) maxlength(60) required
+    statut SectionStatut
+}
+
+entity Produit{
+	name String minlength(4) maxlength(60) required
+    price BigDecimal required
+}
+
+entity UserAccount{
+	nom String minlength(4) maxlength(60) required
+    prenom String minlength(4) maxlength(60) required
+    sexe Sexe
+    role Role
+    telephone String minlength(8) maxlength(30) required
+}
+
+entity StockProduit {
+	name String
+    quantite Integer
+    dateExpiration Instant
+  
+}
+
+entity VenteProduit {
+	quantite Integer required
+    prix BigDecimal required
+    dateVente Instant
+    statut VenteStatut
+}
+
+entity Client {
+	nom String minlength(4) maxlength(60) required
+    prenom String minlength(4) maxlength(60) required
+    sexe Sexe
+    telephone String minlength(8) maxlength(30) required
+}
+
+entity Credit{
+	solde BigDecimal
+    type CreditType
+    statut CreditStatut
+}
+
+// enum
+enum CreditType {
+	CASHIER, COMPTABLE
+}
+
+enum CreditStatut {
+	ACTIVE, CLOSED
+}
+
+enum VenteStatut {
+	ACTIVE, CLOSED
+}
+enum EntrepriseStatut {
+	ACTIVE, CLOSED
+}
+
+enum PointOfSaleStatut {
+	ACTIVE, CLOSED
+}
+
+enum SectionStatut {
+	ACTIVE, INNACTIVE
+}
+
+enum Sexe{
+	Masculin, Feminin
+}
+
+enum Role{
+	CASHIER, RESPONSABLE_POINT, ADMIN, SUPER_ADMIN
+}
+
+// relationship
+relationship OneToMany {
+	Entreprise to PointOfSale
+}
+
+relationship OneToMany {
+	Entreprise to Section
+}
+
+relationship OneToMany {
+	Produit to StockProduit
+}
+
+relationship OneToMany {
+	Section to Produit
+}
+
+relationship OneToMany {
+	Produit to VenteProduit
+}
+
+relationship OneToMany {
+	StockProduit to VenteProduit
+}
+
+relationship OneToMany {
+	UserAccount to VenteProduit
+}
+
+relationship OneToMany {
+	UserAccount to Credit
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with chad
+
+
+
+
+relationship OneToMany {
+	Entreprise to PointOfSale
+}
+
+relationship OneToMany {
+	Entreprise to Produit
+}
+
+relationship OneToMany {
+	Entreprise to UserAccount
+}
+
+relationship OneToMany {
+	Entreprise to Section
+}
+
+relationship OneToMany {
+	Produit to StockProduit
+}
+
+relationship OneToMany{
+	PointOfSale to UserAccount
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with chad
+
+
+
+    

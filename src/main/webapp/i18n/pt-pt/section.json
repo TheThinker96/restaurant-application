@@ -1,0 +1,27 @@
+{
+  "restaurantApplicationApp": {
+    "section": {
+      "home": {
+        "title": "Sections",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Section",
+        "createOrEditLabel": "Criar ou editar Section",
+        "notFound": "Nenhum Sections encontrado"
+      },
+      "created": "Um novo Section foi criado com o identificador {{ param }}",
+      "updated": "Section com identificador {{ param }} foi actualizado",
+      "deleted": "Section com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Section {{ id }}?"
+      },
+      "detail": {
+        "title": "Section"
+      },
+      "id": "ID",
+      "name": "Name",
+      "statut": "Statut",
+      "produit": "Produit",
+      "entreprise": "Entreprise"
+    }
+  }
+}

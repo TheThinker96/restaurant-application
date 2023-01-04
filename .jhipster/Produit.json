@@ -1,0 +1,54 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220551",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "produit",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Produit",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stockProduit",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "stockProduit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "venteProduit",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "venteProduit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "section",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "entreprise",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "entreprise",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

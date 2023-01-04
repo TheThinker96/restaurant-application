@@ -1,0 +1,29 @@
+{
+  "restaurantApplicationApp": {
+    "produit": {
+      "home": {
+        "title": "Produits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Produit",
+        "createOrEditLabel": "Criar ou editar Produit",
+        "notFound": "Nenhum Produits encontrado"
+      },
+      "created": "Um novo Produit foi criado com o identificador {{ param }}",
+      "updated": "Produit com identificador {{ param }} foi actualizado",
+      "deleted": "Produit com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Produit"
+      },
+      "id": "ID",
+      "name": "Name",
+      "price": "Price",
+      "stockProduit": "Stock Produit",
+      "venteProduit": "Vente Produit",
+      "section": "Section",
+      "entreprise": "Entreprise"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "restaurantApplicationApp": {
+    "venteProduit": {
+      "home": {
+        "title": "VenteProduits",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Vente Produit",
+        "createOrEditLabel": "Créer ou éditer un Vente Produit",
+        "notFound": "Aucun Vente Produit trouvé"
+      },
+      "created": "Un nouveau Vente Produit a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vente Produit avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vente Produit avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Vente Produit {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vente Produit"
+      },
+      "id": "ID",
+      "quantite": "Quantite",
+      "prix": "Prix",
+      "dateVente": "Date Vente",
+      "statut": "Statut",
+      "produit": "Produit",
+      "stockProduit": "Stock Produit",
+      "userAccount": "User Account"
+    }
+  }
+}

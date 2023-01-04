@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-credit-chad-heading"
+        data-cy="CreditCreateUpdateHeading"
+        jhiTranslate="restaurantApplicationApp.credit.home.createOrEditLabel"
+      >
+        Create or edit a Credit
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.credit.solde" for="field_solde">Solde</label>
+          <input type="number" class="form-control" name="solde" id="field_solde" data-cy="solde" formControlName="solde" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.credit.type" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null">{{ 'restaurantApplicationApp.CreditType.null' | translate }}</option>
+            <option *ngFor="let creditType of creditTypeValues" [value]="creditType">
+              {{ 'restaurantApplicationApp.CreditType.' + creditType | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.credit.statut" for="field_statut">Statut</label>
+          <select class="form-control" name="statut" formControlName="statut" id="field_statut" data-cy="statut">
+            <option [ngValue]="null">{{ 'restaurantApplicationApp.CreditStatut.null' | translate }}</option>
+            <option *ngFor="let creditStatut of creditStatutValues" [value]="creditStatut">
+              {{ 'restaurantApplicationApp.CreditStatut.' + creditStatut | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.credit.userAccount" for="field_userAccount">User Account</label>
+          <select
+            class="form-control"
+            id="field_userAccount"
+            data-cy="userAccount"
+            name="userAccount"
+            formControlName="userAccount"
+            [compareWith]="compareUserAccountChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="userAccountOption" *ngFor="let userAccountOption of userAccountsSharedCollection">
+              {{ userAccountOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

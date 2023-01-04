@@ -1,0 +1,51 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220549",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "point_of_sale",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "responsable",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PointOfSale",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "pointOfSale",
+      "relationshipName": "userAccount",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "entreprise",
+      "otherEntityRelationshipName": "pointOfSale",
+      "relationshipName": "entreprise",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

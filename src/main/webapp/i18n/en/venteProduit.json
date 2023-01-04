@@ -1,0 +1,30 @@
+{
+  "restaurantApplicationApp": {
+    "venteProduit": {
+      "home": {
+        "title": "Vente Produits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vente Produit",
+        "createOrEditLabel": "Create or edit a Vente Produit",
+        "notFound": "No Vente Produits found"
+      },
+      "created": "A new Vente Produit is created with identifier {{ param }}",
+      "updated": "A Vente Produit is updated with identifier {{ param }}",
+      "deleted": "A Vente Produit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vente Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Vente Produit"
+      },
+      "id": "ID",
+      "quantite": "Quantite",
+      "prix": "Prix",
+      "dateVente": "Date Vente",
+      "statut": "Statut",
+      "produit": "Produit",
+      "stockProduit": "Stock Produit",
+      "userAccount": "User Account"
+    }
+  }
+}
