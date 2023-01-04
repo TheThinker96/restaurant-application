@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userAccount">
+      <h2 data-cy="userAccountDetailsHeading">
+        <span jhiTranslate="restaurantApplicationApp.userAccount.detail.title">User Account</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ userAccount.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.nom">Nom</span></dt>
+        <dd>
+          <span>{{ userAccount.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ userAccount.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.sexe">Sexe</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'restaurantApplicationApp.Sexe.' + userAccount.sexe }}">{{ userAccount.sexe }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.role">Role</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'restaurantApplicationApp.Role.' + userAccount.role }}">{{ userAccount.role }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ userAccount.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.entreprise">Entreprise</span></dt>
+        <dd>
+          <div *ngIf="userAccount.entreprise">
+            <a [routerLink]="['/entreprise-chad', userAccount.entreprise.id, 'view']">{{ userAccount.entreprise.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.userAccount.pointOfSale">Point Of Sale</span></dt>
+        <dd>
+          <div *ngIf="userAccount.pointOfSale">
+            <a [routerLink]="['/point-of-sale-chad', userAccount.pointOfSale.id, 'view']">{{ userAccount.pointOfSale.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-account-chad', userAccount.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

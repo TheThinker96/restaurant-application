@@ -1,0 +1,150 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-vente-produit-chad-heading"
+        data-cy="VenteProduitCreateUpdateHeading"
+        jhiTranslate="restaurantApplicationApp.venteProduit.home.createOrEditLabel"
+      >
+        Create or edit a Vente Produit
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.quantite" for="field_quantite">Quantite</label>
+          <input type="number" class="form-control" name="quantite" id="field_quantite" data-cy="quantite" formControlName="quantite" />
+          <div *ngIf="editForm.get('quantite')!.invalid && (editForm.get('quantite')!.dirty || editForm.get('quantite')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('quantite')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('quantite')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.prix" for="field_prix">Prix</label>
+          <input type="number" class="form-control" name="prix" id="field_prix" data-cy="prix" formControlName="prix" />
+          <div *ngIf="editForm.get('prix')!.invalid && (editForm.get('prix')!.dirty || editForm.get('prix')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('prix')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('prix')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.dateVente" for="field_dateVente">Date Vente</label>
+          <div class="d-flex">
+            <input
+              id="field_dateVente"
+              data-cy="dateVente"
+              type="datetime-local"
+              class="form-control"
+              name="dateVente"
+              formControlName="dateVente"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.statut" for="field_statut">Statut</label>
+          <select class="form-control" name="statut" formControlName="statut" id="field_statut" data-cy="statut">
+            <option [ngValue]="null">{{ 'restaurantApplicationApp.VenteStatut.null' | translate }}</option>
+            <option *ngFor="let venteStatut of venteStatutValues" [value]="venteStatut">
+              {{ 'restaurantApplicationApp.VenteStatut.' + venteStatut | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.produit" for="field_produit">Produit</label>
+          <select
+            class="form-control"
+            id="field_produit"
+            data-cy="produit"
+            name="produit"
+            formControlName="produit"
+            [compareWith]="compareProduitChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="produitOption" *ngFor="let produitOption of produitsSharedCollection">{{ produitOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.stockProduit" for="field_stockProduit"
+            >Stock Produit</label
+          >
+          <select
+            class="form-control"
+            id="field_stockProduit"
+            data-cy="stockProduit"
+            name="stockProduit"
+            formControlName="stockProduit"
+            [compareWith]="compareStockProduitChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="stockProduitOption" *ngFor="let stockProduitOption of stockProduitsSharedCollection">
+              {{ stockProduitOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="restaurantApplicationApp.venteProduit.userAccount" for="field_userAccount"
+            >User Account</label
+          >
+          <select
+            class="form-control"
+            id="field_userAccount"
+            data-cy="userAccount"
+            name="userAccount"
+            formControlName="userAccount"
+            [compareWith]="compareUserAccountChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="userAccountOption" *ngFor="let userAccountOption of userAccountsSharedCollection">
+              {{ userAccountOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

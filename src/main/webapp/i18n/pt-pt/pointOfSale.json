@@ -1,0 +1,28 @@
+{
+  "restaurantApplicationApp": {
+    "pointOfSale": {
+      "home": {
+        "title": "Point Of Sales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Point Of Sale",
+        "createOrEditLabel": "Criar ou editar Point Of Sale",
+        "notFound": "Nenhum Point Of Sales encontrado"
+      },
+      "created": "Um novo Point Of Sale foi criado com o identificador {{ param }}",
+      "updated": "Point Of Sale com identificador {{ param }} foi actualizado",
+      "deleted": "Point Of Sale com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Point Of Sale {{ id }}?"
+      },
+      "detail": {
+        "title": "Point Of Sale"
+      },
+      "id": "ID",
+      "name": "Name",
+      "responsable": "Responsable",
+      "adresse": "Adresse",
+      "userAccount": "User Account",
+      "entreprise": "Entreprise"
+    }
+  }
+}

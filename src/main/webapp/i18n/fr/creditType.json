@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "CreditType": {
+      "null": "",
+      "CASHIER": "CASHIER",
+      "COMPTABLE": "COMPTABLE"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "SectionStatut": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INNACTIVE": "INNACTIVE"
+    }
+  }
+}

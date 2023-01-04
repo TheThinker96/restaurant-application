@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "CreditStatut": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

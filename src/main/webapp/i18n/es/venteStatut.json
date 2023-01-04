@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "VenteStatut": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

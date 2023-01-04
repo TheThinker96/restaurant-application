@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "EntrepriseStatut": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

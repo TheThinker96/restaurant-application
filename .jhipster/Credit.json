@@ -1,0 +1,38 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220556",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "credit",
+  "fields": [
+    {
+      "fieldName": "solde",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "CreditType",
+      "fieldValues": "CASHIER,COMPTABLE"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "CreditStatut",
+      "fieldValues": "ACTIVE,CLOSED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Credit",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "credit",
+      "relationshipName": "userAccount",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

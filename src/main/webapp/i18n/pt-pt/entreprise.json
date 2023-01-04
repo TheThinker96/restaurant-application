@@ -1,0 +1,32 @@
+{
+  "restaurantApplicationApp": {
+    "entreprise": {
+      "home": {
+        "title": "Entreprises",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Entreprise",
+        "createOrEditLabel": "Criar ou editar Entreprise",
+        "notFound": "Nenhum Entreprises encontrado"
+      },
+      "created": "Um novo Entreprise foi criado com o identificador {{ param }}",
+      "updated": "Entreprise com identificador {{ param }} foi actualizado",
+      "deleted": "Entreprise com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Entreprise {{ id }}?"
+      },
+      "detail": {
+        "title": "Entreprise"
+      },
+      "id": "ID",
+      "name": "Name",
+      "responsable": "Responsable",
+      "adresse": "Adresse",
+      "telephones": "Telephones",
+      "statut": "Statut",
+      "pointOfSale": "Point Of Sale",
+      "section": "Section",
+      "produit": "Produit",
+      "userAccount": "User Account"
+    }
+  }
+}

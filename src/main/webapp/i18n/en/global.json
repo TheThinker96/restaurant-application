@@ -7,6 +7,15 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "entrepriseChad": "Entreprise",
+        "pointOfSaleChad": "Point Of Sale",
+        "sectionChad": "Section",
+        "produitChad": "Produit",
+        "userAccountChad": "User Account",
+        "stockProduitChad": "Stock Produit",
+        "venteProduitChad": "Vente Produit",
+        "clientChad": "Client",
+        "creditChad": "Credit",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

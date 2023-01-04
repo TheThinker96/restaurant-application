@@ -1,0 +1,9 @@
+{
+  "restaurantApplicationApp": {
+    "Sexe": {
+      "null": "",
+      "Masculin": "Masculin",
+      "Feminin": "Feminin"
+    }
+  }
+}

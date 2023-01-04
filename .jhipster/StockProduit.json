@@ -1,0 +1,42 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220553",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "stock_produit",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dateExpiration",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StockProduit",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "venteProduit",
+      "otherEntityRelationshipName": "stockProduit",
+      "relationshipName": "venteProduit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "stockProduit",
+      "relationshipName": "produit",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

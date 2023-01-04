@@ -1,0 +1,75 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20230104220548",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "entreprise",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "responsable",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "120",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "telephones",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "EntrepriseStatut",
+      "fieldValues": "ACTIVE,CLOSED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Entreprise",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pointOfSale",
+      "otherEntityRelationshipName": "entreprise",
+      "relationshipName": "pointOfSale",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "entreprise",
+      "relationshipName": "section",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "entreprise",
+      "relationshipName": "produit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "entreprise",
+      "relationshipName": "userAccount",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="venteProduit">
+      <h2 data-cy="venteProduitDetailsHeading">
+        <span jhiTranslate="restaurantApplicationApp.venteProduit.detail.title">Vente Produit</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ venteProduit.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ venteProduit.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.prix">Prix</span></dt>
+        <dd>
+          <span>{{ venteProduit.prix }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.dateVente">Date Vente</span></dt>
+        <dd>
+          <span>{{ venteProduit.dateVente | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.statut">Statut</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'restaurantApplicationApp.VenteStatut.' + venteProduit.statut }}">{{ venteProduit.statut }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.produit">Produit</span></dt>
+        <dd>
+          <div *ngIf="venteProduit.produit">
+            <a [routerLink]="['/produit-chad', venteProduit.produit.id, 'view']">{{ venteProduit.produit.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.stockProduit">Stock Produit</span></dt>
+        <dd>
+          <div *ngIf="venteProduit.stockProduit">
+            <a [routerLink]="['/stock-produit-chad', venteProduit.stockProduit.id, 'view']">{{ venteProduit.stockProduit.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restaurantApplicationApp.venteProduit.userAccount">User Account</span></dt>
+        <dd>
+          <div *ngIf="venteProduit.userAccount">
+            <a [routerLink]="['/user-account-chad', venteProduit.userAccount.id, 'view']">{{ venteProduit.userAccount.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/vente-produit-chad', venteProduit.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
